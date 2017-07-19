@@ -1,0 +1,211 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="WpfApplication1.Window1"
+        mc:Ignorable="d"
+        Title="Window1" Height="194.041" Width="203.433" AllowsTransparency="True" Background="Transparent" WindowStyle="None" >
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="STOP键-未点击.png" Stretch="Uniform"/>
+                            </Grid.Background>
+                            <Path Data="M42,6.25 C46.747071,9.0454972 50.473375,12.457431 55.5,15.25 60.908138,18.254521 67.625271,19.579619 73.75,21.25 79.217407,22.741111 85.154397,23.437785 91.25,22.5 94.231299,22.041339 96.662596,22.061183 99.25,20.25 101.48064,18.688549 104.2605,17.155272 106.75,16.25 110.67719,14.821932 116.19799,12.503356 118.75,8.25 119.22196,7.4634006 119.59471,6.7560998 120.25,6 120.7229,5.4543517 120.40559,4.6107905&#xA;121.5,5.5 121.91754,5.8392478 122.48925,6.7285008 122.75,7.25 124.20455,10.159104 123.74363,11.245755 126.75,13.25 130.84568,15.98045 136.39596,21.965321 141,23.5 144.99844,24.832814 146.35991,33.11997 151.25,34.75 152.32612,40.13061 155.37788,43.62596 161.75,45.75 161.01094,49.44531 153.48436,53.089299 150.5,56.5 146.99361,60.507308 140.40671,62.09329 136.25,66.25 132.15636,70.343635&#xA;123.02143,72.224176 117.25,74 111.95784,75.628355 103.47442,78.75 98,78.75 91.445317,78.75 84.661832,80 78.25,80 71.323415,80 65.68091,78.25 58.75,78.25 54.987638,78.25 52.006525,75.5 48.5,75.5 43.938628,75.5 43.216078,74.537058 39.5,71.75 37.422334,70.191751 33.782046,71.52804 31.75,69.75 28.439707,66.853494 27.499401,68.498202 26,64&#xA;26,64.166667 26,64.333333 26,64.5 26,64.833333 26,65.166667 26,65.5 26.25,65.5 26.5,65.5 26.75,65.5 26.75,65.333333 26.798297,65.159515 26.75,65 26.662931,64.71243 26.416667,64.5 26.25,64.25 21.374361,69.125639 16.826934,59.855036 9.75,55.5 6.8058293,53.688203 3.089301,52.234716 1,49.25 -2.1080381,44.809946 2.3615497,46.221126&#xA;4.25,41.5 6.9726159,40.410954 9.3392085,35.410792 11.75,33 14.831231,29.918769 18.113991,26.770371 21.5,24 28.459563,18.305812 35.723999,12.276001 42,6 42,6.0833333 42,6.1666667 42,6.25 z" Fill="{x:Null}" Margin="-0.069,5.112,0.25,6" Stretch="Fill" Stroke="{x:Null}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="grid">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="STOP键-点击.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="方向右-未点击.png" Stretch="Uniform"/>
+                            </Grid.Background>
+                            <Path Data="M35.784,55.71 C36.784,55.71 37.784,55.71 38.784,55.71 38.784,56.376667 38.784,57.043333 38.784,57.71 57.030866,61.359373 58.784,94.287993 58.784,119.71 58.784,144.34961 60.242228,156.23506 32.784,172.71 40.887516,172.71 58.071043,206.02894 66.784,215.71 78.984155,229.26573 79.522332,259.15625 106.784,238.71 122.78287,226.71084 127.19962,213.58657 137.784,197.71 150.48679,178.65582 148.784,162.56789&#xA;148.784,137.71 148.784,120.51481 157.60999,91.579411 148.784,77.71 137.724,60.329995 130.61088,42.129141 121.784,22.71 110.28009,-2.5986043 119.78083,-8.7884157 76.784,12.71 62.009853,20.097074 49.728174,36.307088 38.784,51.71" Fill="{x:Null}" Margin="32.784,-0.362,29.753,-3.225" Stretch="Fill" Stroke="{x:Null}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="grid">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="方向右-点击.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="方向左-未点击.png" Stretch="Uniform"/>
+                            </Grid.Background>
+                            <Path Data="M50.916333,9.333 C50.237847,10.219555 49.706759,11.230694 49.083,12.166333 48.626174,12.851572 48.443941,13.486244 48.166333,14.249667 47.87929,15.039036 47.833,15.412678 47.833,16.333 47.833,19.653421 47.666162,20.860549 49.833,23.749667 50.237744,24.289326 50.307015,24.781029 50.583,25.333 50.96808,26.10316 51.667422,25.896484 50.833,26.916333 49.764718,28.222011 49.081249,29.208875 47.499667,29.999667 46.224644,30.637178 45.344101,31.957452&#xA;44.249667,32.833 42.985439,33.844382 42.682801,34.816533 41.666333,35.833 41.666333,34.735529 41.744426,34.170491 40.166333,33.749667 39.405444,33.546763 38.863839,32.420508 38.249667,31.583 37.007038,29.888506 37.024476,27.439362 35.916333,25.666333 34.720468,23.752949 35.65985,20.835404 34.749667,18.833 33.517222,16.121623 34.52662,14.039727 35.333,11.083 35.61199,10.060036 35.49224,8.8297016 35.999667,7.9163333 36.549567,6.9265126&#xA;36.910252,5.8986917 37.499667,4.9163333 38.622103,3.0456059 39.983264,1.9957281 41.666333,0.49966667 42.2209,0.0067189155 42.489743,0.24314247 43.166333,1.4996667 43.604512,2.3134265 43.540421,2.1885629 44.416333,2.6663333 45.30935,3.1534331 46.118407,4.0279921 46.916333,4.6663333 48.510387,5.9415759 49.377408,8.0573121 50.916333,9.333 z" Fill="{x:Null}" Margin="34.174,0.26,34.441,-0.167" Stretch="Fill" Stroke="{x:Null}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="grid">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="方向左-点击.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle5" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid" Height="Auto">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="切换R-未点击.png" Stretch="Uniform"/>
+                            </Grid.Background>
+                            <Path Data="M19.333,67.042 C20.916645,65.965934 21.921728,65.066181 23.458,64.042 25.216913,62.869391 27.38128,62.372327 29.208,61.542 31.186193,60.642821 33.095476,60.144087 35.208,59.792 38.037996,59.320334 39.22234,60.086057 41.958,60.542 43.68937,60.830562 45.956134,61.341254 47.708,62.042 49.3406,62.69504 50.73939,63.745195 52.333,64.542 53.251477,65.001238 54.884604,66.917 55.958,66.917 57.996571,66.917 58.790721,64.512087&#xA;60.708,63.292 63.332591,61.621806 66.451267,58.298733 68.583,56.167 70.090666,54.659334 74.79223,50.572004 74.958,48.417 75.150918,45.909067 73.401926,47.14539 72.083,45.167 71.304136,43.998703 70.176904,43.079562 68.833,42.542 67.252295,41.909718 65.880453,41.204963 64.583,40.167 64.051255,39.741604 63.314402,39.138646 62.708,38.667 61.292238,37.565852 60.099858,37.639039 58.458,37.042 57.018951,36.518709&#xA;54.49809,35.667 52.958,35.667 51.783168,35.667 50.466922,34.186769 49.208,33.917 48.080308,33.675352 46.60537,33.417 45.458,33.417 40.418205,33.417 35.345296,32.667 30.208,32.667 28.123065,32.667 26.494921,33.404693 24.583,34.042 22.869192,34.613269 21.042981,34.716011 19.458,35.667 16.543155,37.415907 12.627516,38.524879 9.333,39.792 6.5129874,40.87662 4.0841379,43.665862 1.833,45.917&#xA;-1.1758098,48.92581 -1.8639883,48.509409 3.958,53.167 6.6178326,55.294866 10.094941,58.10633 12.333,60.792 13.475134,62.162561 14.64782,63.090615 16.083,64.167 16.693449,64.624837 17.150058,65.30494 17.583,65.792 18.611722,66.949312 18.494368,66.694487 20.083,67.042" Fill="{x:Null}" Margin="-0.438,32.667,0.027,32.958" Stretch="Fill" Stroke="{x:Null}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="grid">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="切换R-点击.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Canvas>
+            <Button x:Name="button" Content="Button" Style="{DynamicResource ButtonStyle2}" Height="69" Canvas.Left="36.001" Canvas.Top="124.667" Width="133" Click="button_Click" TouchUp="button_TouchUp" TouchDown="button_TouchDown" PreviewMouseLeftButtonUp="button_MouseLeftButtonUp"  TouchLeave="button_TouchLeave" MouseLeave="button_MouseLeave"  PreviewMouseLeftButtonDown="button_PreviewMouseLeftButtonDown" PreviewMouseDown="button_MouseDown"/>
+            <Button x:Name="button1" Content="Button" Width="67.793" Style="{DynamicResource ButtonStyle3}" Height="130.763" Canvas.Left="133.216" Canvas.Top="30.122" PreviewMouseDown="button1_MouseDown" MouseLeave="button1_MouseLeave" PreviewMouseUp="button1_MouseUp" TouchUp="button1_TouchUp" TouchLeave="button1_TouchLeave" TouchDown="button1_TouchDown"/>
+            <Button x:Name="button2" Content="Button" Height="128.052" Canvas.Left="-0.664" Canvas.Top="31.584" Width="78" Style="{DynamicResource ButtonStyle4}" PreviewMouseDown="button2_MouseDown" MouseLeave="button2_MouseLeave" PreviewMouseUp="button2_MouseUp" TouchUp="button2_TouchUp" TouchLeave="button2_TouchLeave" TouchDown="button2_TouchDown"/>
+            <Button x:Name="button3" Content="Button" Width="131.25" Canvas.Left="37.75" Canvas.Top="2.082" Style="{DynamicResource ButtonStyle5}" Height="60.25" TouchLeave="button3_TouchLeave" TouchDown="button3_TouchDown" TouchUp="button3_TouchUp" MouseLeave="button3_MouseLeave" PreviewMouseDown="button3_MouseDown" PreviewMouseUp="button3_MouseUp" />
+        </Canvas>
+    </Grid>
+</Window>

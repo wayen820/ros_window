@@ -1,0 +1,9 @@
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\XmlRpc_Wrapper\bin\Debug\XmlRpc_Wrapper.dll
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\XmlRpc_Wrapper\bin\Debug\XmlRpc_Wrapper.pdb
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\XmlRpc_Wrapper\obj\Debug\XmlRpc_Wrapper.csprojResolveAssemblyReference.cache
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\XmlRpc_Wrapper\obj\Debug\XmlRpc_Wrapper.dll
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\XmlRpc_Wrapper\obj\Debug\XmlRpc_Wrapper.pdb
+F:\work\ros小车\RoverGround\RoverGround\XmlRpc_Wrapper\bin\Debug\XmlRpc_Wrapper.dll
+F:\work\ros小车\RoverGround\RoverGround\XmlRpc_Wrapper\bin\Debug\XmlRpc_Wrapper.pdb
+F:\work\ros小车\RoverGround\RoverGround\XmlRpc_Wrapper\obj\Debug\XmlRpc_Wrapper.dll
+F:\work\ros小车\RoverGround\RoverGround\XmlRpc_Wrapper\obj\Debug\XmlRpc_Wrapper.pdb

@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoverGround"
+        xmlns:ROS_ImageWPF="clr-namespace:ROS_ImageWPF;assembly=ROS_ImageWPF" x:Class="RoverGround.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="449.36" Width="792.463" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp" WindowState="Maximized" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="439*"/>
+            <ColumnDefinition Width="137*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="62.944"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="72.772"/>
+        </Grid.RowDefinitions>
+        <ROS_ImageWPF:MapControl Grid.Row="1" Margin="10,0,0,0" Topic="/map" Grid.RowSpan="2"/>
+        <Button x:Name="button" Content="连接" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="45" Margin="320,19,0,0" Click="button_Click" Grid.Row="3"/>
+        <Button x:Name="button1" Content="键盘控制" HorizontalAlignment="Left" Height="19" Margin="29,19.056,0,0" Grid.Row="3" VerticalAlignment="Top" Width="57" Click="button1_Click"/>
+        <Button x:Name="button2" Content="触屏控制" HorizontalAlignment="Left" Height="19" Margin="109,19.056,0,0" Grid.Row="3" VerticalAlignment="Top" Width="63" Click="button2_Click"/>
+        <Button x:Name="button2_Copy" Content="导航模式" HorizontalAlignment="Left" Height="19" Margin="200,19.056,0,0" Grid.Row="3" VerticalAlignment="Top" Width="63"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="29,38,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Height="29" Margin="133,10,0,0" VerticalAlignment="Top" Width="420">
+            <Button Content="地图"/>
+            <Button/>
+        </ToolBar>
+
+    </Grid>
+</Window>

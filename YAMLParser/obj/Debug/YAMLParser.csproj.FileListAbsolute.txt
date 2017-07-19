@@ -1,0 +1,8 @@
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\bin\Debug\YAMLParser.exe.config
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\bin\Debug\YAMLParser.exe
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\bin\Debug\YAMLParser.pdb
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\obj\Debug\YAMLParser.csprojResolveAssemblyReference.cache
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\obj\Debug\YAMLParser.Templates.resources
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\obj\Debug\YAMLParser.csproj.GenerateResource.Cache
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\obj\Debug\YAMLParser.exe
+F:\work\ros小车\ROS.NET-master\ROS.NET-master\YAMLParser\obj\Debug\YAMLParser.pdb
